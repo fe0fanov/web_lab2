@@ -1,0 +1,115 @@
+:root {
+    font-size: 18px;
+    --accent: #df6ffe;
+    --muted: #9ca3af;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 20px;
+    color: #111;
+}
+
+header h1 {
+    margin-bottom: 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type=text],
+input[type=date],
+select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e9ef;
+    font-size: 16px;
+    flex: 1;
+    min-width: 120px;
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 0;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls select,
+.controls input {
+    flex: 1;
+    min-width: 140px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #eef2ff;
+    background: #fff;
+}
+
+.task-item.completed {
+    opacity: 0.55;
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.07), transparent);
+}
+
+.task-item button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.task-item button:hover {
+    transform: scale(1.1);
+}
+
+.task-item.dragging {
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    form, .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input[type=text],
+    input[type=date],
+    select,
+    .controls input {
+        width: 100%;
+    }
+}
